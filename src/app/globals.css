@@ -1,17 +1,33 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Backgrounds — layered, not flat black */
+  --bg-base: #0d0d21;        /* page background */
+  --bg-surface: #151513;     /* cards, elevated sections */
+  --bg-surface-hover: #1c1c22;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Borders — subtle, not lines that shout */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.10);
+
+  /* Text */
+  --text-primary: #e8e8ea;   /* not pure white — softer on eyes */
+  --text-secondary: #9a9aa2;
+  --text-muted: #6b6b74;
+
+  /* Accent — one quiet color, used sparingly */
+  --accent: #7c8cf8;         /* soft periwinkle/indigo, muted not neon */
+  --accent-hover: #96a3ff;
+
+  /* Spacing scale (for consistent rhythm) */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
 }
 
 html {
   height: 100%;
+  color-scheme: dark;
 }
 
 html,
@@ -24,9 +40,9 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -40,10 +56,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

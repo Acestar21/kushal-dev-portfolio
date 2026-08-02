@@ -1,0 +1,18 @@
+---
+title: "AceStar Nexus"
+tagline: "Tauri/Rust desktop companion widget for quick access and system monitoring"
+stack: ["Tauri", "Rust", "React", "TypeScript"]
+status: "Active"
+links:
+  github: "https://github.com/Acestar21/nexus"
+---
+
+AceStar Nexus is a lightweight desktop companion widget, branched from the main Nexus project, built with Tauri and Rust.
+
+## Why Tauri over Electron
+
+Electron ships an entire Chromium browser inside your app, which typically means 100MB+ bundles and high memory usage. Tauri uses the operating system's native webview instead, producing much smaller binaries while keeping the same web frontend (React/TypeScript) that Nexus already uses.
+
+## What it does
+
+A minimal, always-available overlay for quick access to dashboard data without opening the full Nexus web app — think of it as a desktop shortcut into the same underlying data.

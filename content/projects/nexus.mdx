@@ -1,0 +1,26 @@
+---
+title: "Nexus"
+tagline: "Local-first developer dashboard with MCP protocol support and AI integration"
+stack: ["FastAPI", "React", "TypeScript", "SQLite", "MCP Protocol", "Ollama"]
+status: "Active"
+links:
+  github: "https://github.com/Acestar21/nexus"
+---
+
+Nexus is a local-first developer dashboard that aggregates GitHub activity, LeetCode progress, and fitness data through custom MCP (Model Context Protocol) servers — with an optional local LLM layer via Ollama for querying your own data conversationally.
+
+## Why local-first
+
+Most developer dashboards are SaaS products that require sending your data to a third-party server. Nexus runs entirely on your machine — SQLite for storage, FastAPI for the backend, React/TypeScript for the frontend — so your GitHub tokens, LeetCode stats, and personal data never leave your device unless you explicitly choose to sync.
+
+## MCP architecture
+
+The MCP protocol lets Nexus expose structured tools that an LLM (local or remote) can call — for example, "fetch my last 10 commits" or "how many LeetCode problems have I solved this week." Custom MCP servers were built for:
+
+- GitHub activity
+- LeetCode progress
+- Fitness tracking
+
+## Status
+
+Actively developed — this is my strongest and most documented portfolio piece.

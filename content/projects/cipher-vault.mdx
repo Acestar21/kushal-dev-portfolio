@@ -1,0 +1,18 @@
+---
+title: "CipherVault"
+tagline: "Client-side AES-256-GCM encrypted storage for sensitive data"
+stack: ["TypeScript", "Web Crypto API", "React", "IndexedDB"]
+status: "Complete"
+links:
+  github: "https://github.com/Acestar21"
+---
+
+CipherVault is a web app for storing sensitive data with client-side AES-256-GCM encryption — the server never sees plaintext, and in this case there isn't even a server: encryption/decryption happens entirely in the browser via the native Web Crypto API.
+
+## Server-blind by design
+
+All encryption and decryption happens client-side. Encrypted blobs are the only thing ever persisted, so even if storage were compromised, the data is useless without the user's key.
+
+## Why AES-256-GCM
+
+GCM (Galois/Counter Mode) provides both encryption and built-in authentication (detects tampering), which matters for a vault where data integrity is as important as confidentiality.

@@ -1,0 +1,28 @@
+---
+title: "RAG PDF System"
+tagline: "Retrieval-augmented generation pipeline for querying PDF documents with local LLMs"
+stack: ["FastAPI", "sentence-transformers", "SQLite", "Ollama", "Python", "React"]
+status: "Complete"
+links:
+  github: "https://github.com/Acestar21"
+---
+
+A full local RAG (Retrieval-Augmented Generation) pipeline: ingest a PDF, embed it, and query it conversationally through a local LLM — no external API calls, no data leaving your machine.
+
+## Pipeline
+
+1. **Ingestion** — PDF text extracted via `pdfplumber`
+2. **Embedding** — sentence-transformer models generate vector embeddings for each chunk
+3. **Retrieval** — cosine similarity search against embeddings stored in SQLite
+4. **Generation** — retrieved context passed to a local Ollama model, streamed back via FastAPI's SSE (Server-Sent Events)
+
+## Measured performance
+
+Tested end-to-end on a 471-page PDF:
+
+- Ingestion: ~55 seconds
+- Query response (end-to-end): ~18 seconds
+
+## Frontend
+
+A basic React/TypeScript interface for uploading PDFs and asking questions, with streaming responses rendered as they arrive.
