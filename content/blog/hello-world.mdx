@@ -1,0 +1,27 @@
+---
+title: "Building a Knowledge Portfolio"
+date: "2026-08-02"
+tags: ["Next.js", "MDX", "Web Development"]
+summary: "Why I rebuilt my portfolio as a living knowledge base instead of a static resume site."
+---
+
+The Pragmatic Programmer talks about maintaining a "knowledge portfolio" — treating what you know like a financial portfolio: invest regularly, diversify, rebalance periodically. This site is that idea made literal.
+
+## Why not just a resume?
+
+A resume is a snapshot. This is meant to be a living document — projects update as I build, skills update as I learn, and this blog is where I write things down as I go.
+
+## A code example
+
+Here's a quick Python snippet, just to confirm syntax highlighting is actually working:
+
+```python
+def fibonacci(n: int) -> int:
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+print([fibonacci(i) for i in range(10)])
+```
+
+If that rendered with colored syntax above, the MDX + Shiki pipeline is working end to end.

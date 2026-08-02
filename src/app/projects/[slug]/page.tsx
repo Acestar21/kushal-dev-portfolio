@@ -4,6 +4,7 @@ import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import { getContentBySlug } from "@/lib/mdx";
+import { mdxOptions } from "@/lib/mdx-options";
 import styles from "./page.module.css";
 
 // Tells Next.js at build time which /projects/[slug] pages to generate —
@@ -61,8 +62,7 @@ export default async function ProjectPage({
       )}
 
       <article className={styles.article}>
-        <MDXRemote source={content} />
-      </article>
+          <MDXRemote source={content} options={mdxOptions} />      </article>
     </main>
   );
 }
