@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-lg) var(--space-md);
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.subheading {
+  margin-top: calc(var(--space-xs) * -1);
+}
+
+.downloadLink {
+  color: var(--accent);
+  font-size: 0.9375rem;
+}
+
+.downloadLink:hover {
+  color: var(--accent-hover);
+}
+
+.viewer {
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 80vh;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

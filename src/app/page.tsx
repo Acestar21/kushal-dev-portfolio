@@ -1,54 +1,64 @@
 import Link from "next/link";
-import { socials } from "@/data/socials";
+import Hero from "@/components/Hero";
+import HomeShowcase from "@/components/HomeShowcase";
+import GitHubStats from "@/components/GitHubStats";
+import LeetCodeStats from "@/components/LeetCodeStats";
+// import TopLanguages from "@/components/TopLanguages";
+import BlogPreviewCard from "@/components/BlogPreviewCard";
+import { getAllContent } from "@/lib/mdx";
+import type { BlogFrontmatter } from "@/lib/mdx";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const posts = getAllContent("blog") as {
+    slug: string;
+    frontmatter: BlogFrontmatter;
+  }[];
+
   return (
     <main className={styles.main}>
-      <section className={styles.hero}>
-        <h1 className={styles.heading}>Hi, I&apos;m Kushal</h1>
-        <p className={styles.tagline}>
-          BTech CSE student · Backend &amp; AI engineering · Building things that work
-        </p>
-        <ul className={styles.socials}>
-          {socials.map((social) => (
-            <li key={social.label}>
-                <a
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialLink}
-                >
-                {social.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <Hero />
+      <HomeShowcase />
 
-      {/* Stats placeholders — wired to real GitHub/LeetCode data later */}
-      <section className={styles.statsRow}>
-        <div className={styles.statCard}>
-          <p className={styles.statLabel}>GitHub activity</p>
-          <p className={styles.statPlaceholder}>Coming soon</p>
-        </div>
-        <div className={styles.statCard}>
-          <p className={styles.statLabel}>LeetCode progress</p>
-          <p className={styles.statPlaceholder}>Coming soon</p>
-        </div>
-      </section>
+      <div className={styles.content}>
+        <section className={styles.statsSection}>
+          <h2 className={styles.statsHeading}>Activity</h2>
 
-      <section className={styles.featured}>
-        <div>
-          <h2 className={styles.featuredTitle}>Featured Project: Nexus</h2>
-          <p className={styles.featuredDesc}>
-            Local-first developer dashboard with MCP protocol support and AI integration.
-          </p>
-        </div>
-        <Link href="/projects/nexus" className={styles.featuredLink}>
-          View Project →
-        </Link>
-      </section>
+          <div className={styles.statsLayout}>
+            <div className={styles.statsLeft}>
+              <div className={styles.statCard}>
+                <GitHubStats />
+              </div>
+              <div className={styles.statsMiniGrid}>
+                <div className={styles.statCard}>
+                  <LeetCodeStats />
+                </div>
+                <div className={styles.statCard}>
+                  {/*<TopLanguages />*/}
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.blogColumn}>
+              <div className={styles.blogHeader}>
+                <h3 className={styles.blogHeading}>Featured Blogs</h3>
+                <Link href="/blog" className={styles.viewAllBlog}>
+                  View all →
+                </Link>
+              </div>
+              <div className={styles.blogScrollArea}>
+                {posts.length === 0 ? (
+                  <p className={styles.emptyBlog}>No posts yet. Check back soon.</p>
+                ) : (
+                  posts.map((post) => (
+                    <BlogPreviewCard key={post.slug} slug={post.slug} frontmatter={post.frontmatter} />
+                  ))
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }

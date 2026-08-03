@@ -9,6 +9,8 @@ export type ProjectFrontmatter = {
   tagline: string;
   stack: string[];
   status: string;
+  featured?: boolean;
+  relatedBlogSlug?: string; // optional — links to a blog post about this project
   links: {
     github?: string;
     live?: string;

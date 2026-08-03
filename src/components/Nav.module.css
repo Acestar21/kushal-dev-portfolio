@@ -1,30 +1,126 @@
 .nav {
+  position: fixed;
+  top: var(--space-sm);
+  left: var(--space-sm);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: var(--space-sm) var(--space-md);
-  border-bottom: 1px solid var(--border-subtle);
-  background: var(--bg-base);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  padding: 0.5rem;
+  z-index: 50;
+  max-width: 48px;
+  height: 48px;
+  overflow: hidden;
+  transition: max-width 0.3s ease;
 }
 
-.logo {
-  font-weight: 600;
-  font-size: 1.125rem;
+.navOpen {
+  max-width: 700px;
+  height: 48px;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.hamburger {
   color: var(--text-primary);
+  font-size: 1.125rem;
+  line-height: 1;
 }
 
 .links {
   display: flex;
-  gap: var(--space-md);
+  align-items: center;
+  gap: 0.25rem;
   list-style: none;
+  padding-left: 0.25rem;
+  white-space: nowrap;
 }
 
 .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
   color: var(--text-secondary);
-  font-size: 0.9375rem;
-  transition: color 0.2s ease;
+  font-size: 0.875rem;
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .link:hover {
   color: var(--text-primary);
+  background: var(--bg-surface-hover);
+}
+
+.icon {
+  font-size: 0.9375rem;
+  line-height: 1;
+}
+
+@media (hover: none) {
+  .nav:hover {
+    max-width: 48px;
+  }
+}
+
+/* Mobile: icons-only vertical dropdown — labels hidden entirely,
+   avoids the text-width/overflow issues of a horizontal expand
+   on narrow screens */
+@media (max-width: 640px) {
+  .nav {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    transition: height 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+    overflow: hidden;
+  }
+
+  .navOpen {
+    width: 48px;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .toggle {
+    align-self: center;
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0.25rem 0 0.5rem 0;
+    gap: 0.125rem;
+  }
+
+  .navOpen .links {
+    display: flex;
+  }
+
+  .link {
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .label {
+    display: none;
+  }
 }

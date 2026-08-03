@@ -1,0 +1,116 @@
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: var(--space-md);
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.total {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.totalUnit {
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
+.metaRow {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  margin-bottom: var(--space-sm);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.metaValue {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.metaLabel {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.barRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.barLabelRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+}
+
+.barLabel {
+  color: var(--text-secondary);
+}
+
+.barCount {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.track {
+  height: 6px;
+  background: var(--bg-base);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.easy {
+  background: #4ade80;
+}
+
+.medium {
+  background: #fbbf24;
+}
+
+.hard {
+  background: #f87171;
+}
+
+.staleNotice {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-style: italic;
+  margin-top: var(--space-sm);
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--border-subtle);
+}
