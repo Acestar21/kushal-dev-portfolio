@@ -71,3 +71,17 @@
 .article :global(code) {
   font-family: var(--font-mono);
 }
+
+.heroImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+  background: var(--bg-surface);
+}
+
+.heroImage {
+  object-fit: cover;
+}

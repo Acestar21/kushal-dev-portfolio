@@ -1,0 +1,27 @@
+---
+title: "Understanding Async/Await Beyond the Syntax ( dummy )"
+date: "2026-07-28"
+tags: ["JavaScript", "Async", "Programming"]
+summary: "Async/await looks simple on the surface, but understanding what actually happens makes debugging much easier."
+---
+
+When I first learned `async` and `await`, they felt like magic. Eventually I realized they're mostly syntax built on top of Promises. Understanding that relationship makes asynchronous code much less intimidating.
+
+## What's really happening?
+
+An `async` function always returns a Promise, regardless of what you explicitly return.
+
+Instead of writing nested `.then()` callbacks, `await` pauses execution until the Promise settles, making asynchronous code read almost like synchronous code.
+
+## Example
+
+```ts
+async function fetchUser(id: number) {
+  const response = await fetch(`/api/users/${id}`);
+  return response.json();
+}
+
+fetchUser(1).then(console.log);
+```
+
+Once you understand Promises, `async/await` becomes a readability feature rather than a new concept.

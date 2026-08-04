@@ -1,0 +1,28 @@
+---
+title: "A Few Things I Learned Building REST APIs ( dummy )"
+date: "2026-06-26"
+tags: ["REST", "Backend", "API Design"]
+summary: "Simple conventions around naming, validation, and error handling make APIs much easier to maintain."
+---
+
+A good API isn't necessarily the one with the most features—it's the one that's predictable.
+
+## Consistency matters
+
+Clients should be able to guess endpoint behavior without reading extensive documentation.
+
+That means consistent naming, status codes, and response structures.
+
+## Example
+
+```json
+{
+  "success": true,
+  "data": {
+    "id": 42,
+    "name": "Alice"
+  }
+}
+```
+
+A predictable response format makes frontend development considerably simpler.

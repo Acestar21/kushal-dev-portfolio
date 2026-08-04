@@ -23,6 +23,7 @@ export type BlogFrontmatter = {
   date: string;
   tags: string[];
   summary: string;
+  coverImage?: string;
 };
 
 type ContentType = "projects" | "blog";

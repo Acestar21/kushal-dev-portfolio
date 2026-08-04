@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
+import Image from "next/image";
 import fs from "fs";
 import path from "path";
 import { getContentBySlug } from "@/lib/mdx";
@@ -34,6 +35,19 @@ export default async function BlogPostPage({
       <Link href="/blog" className={styles.back}>
         ← Back to blog
       </Link>
+
+      {frontmatter.coverImage && (
+        <div className={styles.heroImageWrapper}>
+          <Image
+            src={frontmatter.coverImage}
+            alt={frontmatter.title}
+            fill
+            sizes="720px"
+            className={styles.heroImage}
+            priority
+          />
+        </div>
+      )}
 
       <h1 className={styles.title}>{frontmatter.title}</h1>
 

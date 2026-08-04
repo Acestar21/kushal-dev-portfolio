@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import HomeShowcase from "@/components/HomeShowcase";
 import GitHubStats from "@/components/GitHubStats";
 import LeetCodeStats from "@/components/LeetCodeStats";
-// import TopLanguages from "@/components/TopLanguages";
+import TopLanguages from "@/components/TopLanguages";
 import BlogPreviewCard from "@/components/BlogPreviewCard";
 import { getAllContent } from "@/lib/mdx";
 import type { BlogFrontmatter } from "@/lib/mdx";
@@ -34,7 +34,7 @@ export default function Home() {
                   <LeetCodeStats />
                 </div>
                 <div className={styles.statCard}>
-                  {/*<TopLanguages />*/}
+                  <TopLanguages />
                 </div>
               </div>
             </div>

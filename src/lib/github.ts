@@ -81,3 +81,86 @@ export async function fetchGitHubContributions(): Promise<GitHubStats | null> {
     return null;
   }
 }
+
+export type LanguageStat = {
+  name: string;
+  percentage: number;
+  color: string;
+};
+
+const LANGUAGES_QUERY = `
+  query($username: String!) {
+    user(login: $username) {
+      repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
+        nodes {
+          languages(first: 5, orderBy: { field: SIZE, direction: DESC }) {
+            edges {
+              size
+              node {
+                name
+                color
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+// Aggregates language usage (by byte size) across all your owned,
+// non-forked repos, returning the top languages by overall share.
+export async function fetchGitHubLanguages(): Promise<LanguageStat[] | null> {
+  const token = process.env.GITHUB_TOKEN;
+  const username = process.env.GITHUB_USERNAME;
+
+  if (!token || !username) return null;
+
+  try {
+    const res = await fetch(GITHUB_GRAPHQL_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query: LANGUAGES_QUERY, variables: { username } }),
+      next: { revalidate: 3600 },
+    });
+
+    if (!res.ok) return null;
+
+    const json = await res.json();
+    const repos = json?.data?.user?.repositories?.nodes;
+
+    if (!Array.isArray(repos)) return null;
+
+    const totals = new Map<string, { size: number; color: string }>();
+
+    for (const repo of repos) {
+      const edges = repo?.languages?.edges ?? [];
+      for (const edge of edges) {
+        const name = edge.node.name;
+        const existing = totals.get(name);
+        totals.set(name, {
+          size: (existing?.size ?? 0) + edge.size,
+          color: edge.node.color ?? "#888888",
+        });
+      }
+    }
+
+    const totalSize = Array.from(totals.values()).reduce((sum, v) => sum + v.size, 0);
+    if (totalSize === 0) return null;
+
+    return Array.from(totals.entries())
+      .map(([name, { size, color }]) => ({
+        name,
+        percentage: Math.round((size / totalSize) * 100),
+        color,
+      }))
+      .sort((a, b) => b.percentage - a.percentage)
+      .slice(0, 5);
+  } catch (err) {
+    console.warn("Failed to fetch GitHub languages:", err);
+    return null;
+  }
+}
