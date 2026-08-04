@@ -3,26 +3,250 @@ title: "Building a Knowledge Portfolio"
 date: "2026-08-02"
 tags: ["Next.js", "MDX", "Web Development"]
 summary: "Why I rebuilt my portfolio as a living knowledge base instead of a static resume site."
-coverImage : "/images/blog/blog-1.png"
+coverImage: "/images/blog/blog-1.png"
 ---
 
-The Pragmatic Programmer talks about maintaining a "knowledge portfolio" — treating what you know like a financial portfolio: invest regularly, diversify, rebalance periodically. This site is that idea made literal.
+The Pragmatic Programmer introduces the idea of maintaining a *knowledge portfolio*—treating your skills the same way you would treat financial investments. You don't become a better developer by learning one thing once. You improve by making small, consistent investments over time.
 
+When I first read that concept, it sounded obvious. Everyone says "keep learning." But the book takes it one step further: learning shouldn't be random. It should be deliberate, documented, and continuously growing.
+
+This portfolio is my attempt to make that idea tangible.
+
+Instead of being a static website that I update once every semester, it's a place where projects evolve, blog posts accumulate, and my understanding becomes visible over time.
+___
 ## Why not just a resume?
 
-A resume is a snapshot. This is meant to be a living document — projects update as I build, skills update as I learn, and this blog is where I write things down as I go.
+A resume is designed to summarize.
 
-## A code example
+A knowledge portfolio is designed to explain.
 
-Here's a quick Python snippet, just to confirm syntax highlighting is actually working:
+A resume tells you that I know FastAPI.
+
+A knowledge portfolio can show:
+
+- APIs I've designed
+- architectural decisions I made
+- mistakes I encountered
+- performance optimizations I discovered
+- code samples
+- technical write-ups
+
+Those tell a much richer story than a single bullet point ever could.
+
+Over time I realized recruiters, engineers, and even my future self benefit far more from seeing *how* I think than simply seeing a list of technologies.
+
+---
+## Learning compounds
+
+Programming has an interesting property.
+
+Every new concept makes future concepts easier to learn.
+
+Understanding variables makes loops easier.
+
+Loops make algorithms easier.
+
+Algorithms make data structures easier.
+
+Data structures make system design easier.
+
+Eventually everything begins connecting together.
+
+That's why I try to think of learning as compound interest instead of completing a checklist.
+
+Writing about something forces me to organize scattered thoughts into a coherent explanation.
+
+If I can't explain it clearly, I probably don't understand it as well as I think.
+
+## Why I chose MDX
+
+I wanted writing to feel as frictionless as possible.
+
+A traditional CMS solves many problems, but it also introduces another system to maintain.
+
+Since I already use Git every day, Markdown felt like the natural choice.
+
+MDX adds just enough flexibility to include components without sacrificing the simplicity of plain text.
+
+A blog post is simply another file in the repository.
+
+Creating a new article means creating another `.mdx` file.
+
+No database.
+
+No admin dashboard.
+
+No deployment pipeline changes.
+
+Git already provides version history, collaboration, and backups.
+
+## Building with Next.js
+
+This portfolio is built using Next.js with the App Router.
+
+That choice wasn't simply because it's popular.
+
+The framework solves several practical problems:
+
+- Static generation keeps pages fast.
+- Metadata APIs improve SEO.
+- Dynamic routing makes adding content straightforward.
+- React Server Components reduce unnecessary client-side JavaScript.
+
+As the site grows, I don't want performance to degrade simply because I publish more articles.
+
+## The folder structure
+
+Keeping content separate from application logic makes maintenance much easier.
+
+```text
+content/
+├── blog/
+│   ├── building-a-knowledge-portfolio.mdx
+│   ├── understanding-async-await.mdx
+│   └── docker-for-development.mdx
+│
+├── projects/
+│   ├── nexus.mdx
+│   ├── ciphervault.mdx
+│   └── portfolio.mdx
+│
+public/
+└── images/
+```
+
+Each article is independent.
+
+Adding content doesn't require modifying React components.
+
+The site simply discovers new files automatically.
+
+## Syntax highlighting
+
+Technical blogs often include code.
+
+Poor syntax highlighting makes examples harder to read.
+
+This site uses Shiki through the MDX pipeline, which produces syntax highlighting using the same grammars found in Visual Studio Code.
+
+Here's a small example.
 
 ```python
 def fibonacci(n: int) -> int:
     if n <= 1:
         return n
+
     return fibonacci(n - 1) + fibonacci(n - 2)
+
 
 print([fibonacci(i) for i in range(10)])
 ```
 
-If that rendered with colored syntax above, the MDX + Shiki pipeline is working end to end.
+For TypeScript:
+
+```ts
+type Project = {
+  title: string;
+  featured: boolean;
+};
+
+const featuredProjects = projects.filter(
+  (project) => project.featured
+);
+
+console.log(featuredProjects);
+```
+
+Readable code examples are just as important as readable prose.
+
+## Documentation isn't just for teams
+
+One thing I've started appreciating is writing documentation for myself.
+
+Six months after finishing a project, it's surprisingly easy to forget why certain decisions were made.
+
+Why did I choose SQLite instead of PostgreSQL?
+
+Why did I split a component into multiple files?
+
+Why did I cache this response?
+
+Writing those decisions down means I don't have to rediscover the reasoning later.
+
+Good documentation saves future time.
+
+## Projects tell stories
+
+Every project has a beginning.
+
+Almost every project also has problems that don't appear in the final repository.
+
+Authentication bugs.
+
+Deployment issues.
+
+Architecture changes.
+
+Failed experiments.
+
+Those parts are often more educational than the finished application.
+
+That's why each project on this site is accompanied by a write-up instead of just screenshots and GitHub links.
+
+Understanding the journey matters more than admiring the destination.
+
+## Consistency beats intensity
+
+There are weeks where I can spend dozens of hours building.
+
+There are also weeks dominated by exams or other responsibilities.
+
+Instead of aiming for massive bursts of productivity, I'm trying to build a habit of making consistent progress.
+
+One commit.
+
+One paragraph.
+
+One solved problem.
+
+One blog post.
+
+Those small improvements accumulate surprisingly quickly.
+
+## Writing improves thinking
+
+I've noticed something interesting while writing technical articles.
+
+The act of writing often reveals gaps in my understanding.
+
+Sometimes I begin explaining a topic and realize there's a question I can't answer.
+
+That's useful.
+
+Instead of pretending I understand everything, it gives me a concrete topic to investigate next.
+
+Writing isn't just about teaching others.
+
+It's also a debugging tool for your own knowledge.
+
+## Looking ahead
+
+This portfolio will continue changing.
+
+New projects will replace old ones.
+
+Some technologies will disappear from my toolkit while others become more important.
+
+That's expected.
+
+The goal isn't to create a perfect portfolio.
+
+The goal is to build a record of continuous learning.
+
+Hopefully, months or years from now, I can look back through these posts and clearly see how my thinking evolved—not just what I built, but what I learned while building it.
+
+If you're considering creating your own portfolio, I'd recommend thinking beyond a list of skills. Treat it as a place to document your journey, your experiments, and your lessons learned.
+
+A resume tells people where you are today.
+
+A knowledge portfolio shows how you got there—and where you're headed next.

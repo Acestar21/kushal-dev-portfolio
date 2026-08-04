@@ -1,14 +1,13 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
+import Image from "next/image";
 import fs from "fs";
 import path from "path";
 import { getContentBySlug } from "@/lib/mdx";
 import { mdxOptions } from "@/lib/mdx-options";
 import styles from "./page.module.css";
 
-// Tells Next.js at build time which /projects/[slug] pages to generate —
-// reads the filenames directly from content/projects/*.mdx
 export function generateStaticParams() {
   const dir = path.join(process.cwd(), "content", "projects");
   const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mdx"));
@@ -28,7 +27,6 @@ export default async function ProjectPage({
   try {
     ({ content, frontmatter } = getContentBySlug("projects", slug));
   } catch {
-    // File doesn't exist for this slug — show Next.js's built-in 404
     notFound();
   }
 
@@ -37,6 +35,17 @@ export default async function ProjectPage({
       <Link href="/projects" className={styles.back}>
         ← Back to projects
       </Link>
+
+      <div className={styles.heroImageWrapper}>
+        <Image
+          src={`/images/projects/${slug}-preview.png`}
+          alt={frontmatter.title}
+          fill
+          sizes="720px"
+          className={styles.heroImage}
+          priority
+        />
+      </div>
 
       <h1 className={styles.title}>{frontmatter.title}</h1>
       <p className={styles.tagline}>{frontmatter.tagline}</p>
@@ -62,7 +71,8 @@ export default async function ProjectPage({
       )}
 
       <article className={styles.article}>
-          <MDXRemote source={content} options={mdxOptions} />      </article>
+        <MDXRemote source={content} options={mdxOptions} />
+      </article>
     </main>
   );
 }

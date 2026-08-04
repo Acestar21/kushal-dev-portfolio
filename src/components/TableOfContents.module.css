@@ -1,0 +1,77 @@
+.toc {
+  position: fixed;
+  top: 50%;
+  right: var(--space-md);
+  transform: translateY(-50%);
+  z-index: 40;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lineList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.lineItem {
+  display: flex;
+}
+
+.lineLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: row-reverse;
+}
+
+.line {
+  width: 20px;
+  height: 2px;
+  background: var(--border-default);
+  border-radius: 999px;
+  transition: background 0.2s ease, width 0.2s ease;
+  flex-shrink: 0;
+}
+
+.lineIndent {
+  width: 12px;
+  margin-right: 8px;
+}
+
+.lineActive {
+  background: var(--accent);
+  width: 28px;
+}
+
+.text {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-width 0.25s ease, opacity 0.2s ease;
+}
+
+.expanded .text {
+  max-width: 240px;
+  opacity: 1;
+}
+
+.expanded .lineLink:hover .text {
+  color: var(--text-primary);
+}
+
+.lineActive + .text,
+.lineLink:has(.lineActive) .text {
+  color: var(--accent);
+}
