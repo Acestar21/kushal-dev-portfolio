@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  width: 100%;
+}
+
+.header {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.heading {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.85rem;
+}
+
+.subheading {
+  max-width: 38rem;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
