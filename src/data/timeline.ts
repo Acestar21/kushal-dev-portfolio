@@ -49,7 +49,7 @@ export const timelineEntries: TimelineEntry[] = [
     category: "Learning",
     kind: "minor",
   },
-  {
+  { 
     date: "July 2026",
     title: "Searching for Internships",
     description: "Currently Searching for Internships in preferred domains",

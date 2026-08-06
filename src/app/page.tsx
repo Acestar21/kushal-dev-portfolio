@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import HomeShowcase from "@/components/HomeShowcase";
 import GitHubStats from "@/components/GitHubStats";
 import LeetCodeStats from "@/components/LeetCodeStats";
+import AboutCard from "@/components/AboutCard";
 import TopLanguages from "@/components/TopLanguages";
 import BlogPreviewCard from "@/components/BlogPreviewCard";
 import { getAllContent } from "@/lib/mdx";
@@ -23,7 +24,7 @@ export default function Home() {
       <div className={styles.content}>
         <section className={styles.statsSection}>
           <h2 className={styles.statsHeading}>Activity</h2>
-
+            <AboutCard />
           <div className={styles.statsLayout}>
             <div className={styles.statsLeft}>
               <div className={styles.statCard}>
