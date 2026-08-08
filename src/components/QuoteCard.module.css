@@ -1,31 +1,31 @@
 .card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  padding: var(--space-lg) var(--space-md);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+	background: var(--bg-surface);
+	border: 1px solid var(--border-subtle);
+	border-radius: 12px;
+	padding: var(--space-lg) var(--space-md);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
 }
 
 .mark {
-  color: var(--accent);
-  font-size: 2rem;
-  line-height: 1;
-  margin-bottom: var(--space-xs);
+	color: var(--accent);
+	font-size: 2rem;
+	line-height: 1;
+	margin-bottom: var(--space-xs);
 }
 
 .text {
-  color: var(--text-secondary);
-  font-size: 0.9375rem;
-  font-style: italic;
-  line-height: 1.6;
-  margin-bottom: var(--space-sm);
+	color: var(--text-secondary);
+	font-size: 0.9375rem;
+	font-style: italic;
+	line-height: 1.6;
+	margin-bottom: var(--space-sm);
 }
 
 .author {
-  color: var(--text-muted);
-  font-size: 0.8125rem;
+	color: var(--text-muted);
+	font-size: 0.8125rem;
 }

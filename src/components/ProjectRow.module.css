@@ -1,114 +1,114 @@
 .preview {
-    position: absolute;
-    width: 340px;
-    height: 210px;
-    pointer-events: none;
-    z-index: 20;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-    border-radius: 12px;
-    overflow: hidden;
+	position: absolute;
+	width: 340px;
+	height: 210px;
+	pointer-events: none;
+	z-index: 20;
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+	border-radius: 12px;
+	overflow: hidden;
 }
 
 .previewImage {
-    object-fit: cover;
+	object-fit: cover;
 }
 
 .links {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: var(--space-xs);
+	display: flex;
+	gap: 0.5rem;
+	margin-top: var(--space-xs);
 }
 
 .linkBubble {
-    color: var(--bg-base);
-    background: var(--accent);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    padding: 0.4rem 0.875rem;
-    border-radius: 999px;
-    transition: background 0.2s ease;
+	color: var(--bg-base);
+	background: var(--accent);
+	font-size: 0.8125rem;
+	font-weight: 600;
+	padding: 0.4rem 0.875rem;
+	border-radius: 999px;
+	transition: background 0.2s ease;
 }
 
 .linkBubble:hover {
-    background: var(--accent-hover);
+	background: var(--accent-hover);
 }
 
 .linkBubbleSecondary {
-    color: var(--text-secondary);
-    background: transparent;
-    border: 1px solid var(--border-default);
-    font-size: 0.8125rem;
-    padding: 0.4rem 0.875rem;
-    border-radius: 999px;
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
+	color: var(--text-secondary);
+	background: transparent;
+	border: 1px solid var(--border-default);
+	font-size: 0.8125rem;
+	padding: 0.4rem 0.875rem;
+	border-radius: 999px;
+	transition:
+		color 0.2s ease,
+		border-color 0.2s ease;
 }
 
 .linkBubbleSecondary:hover {
-    color: var(--text-primary);
-    border-color: var(--accent);
+	color: var(--text-primary);
+	border-color: var(--accent);
 }
 
 .row {
-    position: relative;
-    isolation: isolate;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-    padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--border-subtle);
-    z-index: 1;
+	position: relative;
+	isolation: isolate;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+	padding: var(--space-md) 0;
+	border-bottom: 1px solid var(--border-subtle);
+	z-index: 1;
 }
 
 .rowHovering {
-    z-index: 50;
+	z-index: 50;
 }
 
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-sm);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-sm);
 }
 
 .title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-primary);
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--text-primary);
 }
 
 .status {
-    font-size: 0.75rem;
-    color: var(--accent);
-    border: 1px solid var(--border-subtle);
-    padding: 0.125rem 0.5rem;
-    border-radius: 999px;
-    white-space: nowrap;
+	font-size: 0.75rem;
+	color: var(--accent);
+	border: 1px solid var(--border-subtle);
+	padding: 0.125rem 0.5rem;
+	border-radius: 999px;
+	white-space: nowrap;
 }
 
 .tagline {
-    color: var(--text-secondary);
-    font-size: 0.9375rem;
+	color: var(--text-secondary);
+	font-size: 0.9375rem;
 }
 
 .stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.375rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.375rem;
 }
 
 .tech {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    background: var(--bg-base);
-    border: 1px solid var(--border-subtle);
-    padding: 0.125rem 0.5rem;
-    border-radius: 6px;
+	font-size: 0.75rem;
+	color: var(--text-muted);
+	background: var(--bg-base);
+	border: 1px solid var(--border-subtle);
+	padding: 0.125rem 0.5rem;
+	border-radius: 6px;
 }
 
 .info {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
 }

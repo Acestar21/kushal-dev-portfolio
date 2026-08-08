@@ -1,136 +1,138 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-  padding: var(--space-lg) var(--space-md);
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-lg);
+	padding: var(--space-lg) var(--space-md);
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
 }
 
 .heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: var(--text-primary);
 }
 
 .subheading {
-  color: var(--text-secondary);
-  margin-top: calc(var(--space-xs) * -1);
+	color: var(--text-secondary);
+	margin-top: calc(var(--space-xs) * -1);
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--space-md);
-  align-items: stretch;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	gap: var(--space-md);
+	align-items: stretch;
 }
 
 .cardWrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 .card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  transition: border-color 0.2s ease, background 0.2s ease;
+	background: var(--bg-surface);
+	border: 1px solid var(--border-subtle);
+	border-radius: 12px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	transition:
+		border-color 0.2s ease,
+		background 0.2s ease;
 }
 
 .featuredBadge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 5;
-  background: var(--accent);
-  color: var(--bg-base);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.25rem 0.625rem;
-  border-radius: 999px;
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	z-index: 5;
+	background: var(--accent);
+	color: var(--bg-base);
+	font-size: 0.6875rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	padding: 0.25rem 0.625rem;
+	border-radius: 999px;
 }
 
 .card:hover {
-  border-color: var(--border-default);
-  background: var(--bg-surface-hover);
+	border-color: var(--border-default);
+	background: var(--bg-surface-hover);
 }
 
 .imageWrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  background: var(--bg-base);
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	background: var(--bg-base);
 }
 
 .image {
-  object-fit: cover;
+	object-fit: cover;
 }
 
 .cardBody {
-  padding: var(--space-sm);
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+	padding: var(--space-sm);
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 
 .cardHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-sm);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-sm);
 }
 
 .cardTitle {
-  font-size: 1.0625rem;
-  font-weight: 600;
-  color: var(--text-primary);
+	font-size: 1.0625rem;
+	font-weight: 600;
+	color: var(--text-primary);
 }
 
 .status {
-  font-size: 0.6875rem;
-  color: var(--accent);
-  border: 1px solid var(--border-subtle);
-  padding: 0.125rem 0.5rem;
-  border-radius: 999px;
-  white-space: nowrap;
+	font-size: 0.6875rem;
+	color: var(--accent);
+	border: 1px solid var(--border-subtle);
+	padding: 0.125rem 0.5rem;
+	border-radius: 999px;
+	white-space: nowrap;
 }
 
 .tagline {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
+	color: var(--text-secondary);
+	font-size: 0.875rem;
 }
 
 .stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.375rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.375rem;
 }
 
 .tech {
-  font-size: 0.6875rem;
-  color: var(--text-muted);
-  background: var(--bg-base);
-  border: 1px solid var(--border-subtle);
-  padding: 0.125rem 0.5rem;
-  border-radius: 6px;
+	font-size: 0.6875rem;
+	color: var(--text-muted);
+	background: var(--bg-base);
+	border: 1px solid var(--border-subtle);
+	padding: 0.125rem 0.5rem;
+	border-radius: 6px;
 }
 
 .githubLink {
-  color: var(--accent);
-  font-size: 0.8125rem;
-  margin-top: var(--space-xs);
-  align-self: flex-start;
+	color: var(--accent);
+	font-size: 0.8125rem;
+	margin-top: var(--space-xs);
+	align-self: flex-start;
 }
 
 .githubLink:hover {
-  color: var(--accent-hover);
+	color: var(--accent-hover);
 }

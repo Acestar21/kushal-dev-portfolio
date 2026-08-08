@@ -1,223 +1,248 @@
 .timelineShell {
-  position: relative;
-  padding: 0 var(--space-sm) var(--space-xl);
+	position: relative;
+	padding: 0 var(--space-sm) var(--space-xl);
 }
 
 .backdrop {
-  position: absolute;
-  inset: -2rem 0 0;
-  background-image: radial-gradient(var(--border-default) 1px, transparent 1px);
-  background-size: 30px 30px;
-  opacity: 0.32;
-  pointer-events: none;
+	position: absolute;
+	inset: -2rem 0 0;
+	background-image: radial-gradient(
+		var(--border-default) 1px,
+		transparent 1px
+	);
+	background-size: 30px 30px;
+	opacity: 0.32;
+	pointer-events: none;
 }
 
 .timeline {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1.15rem;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 1.15rem;
+	max-width: 1120px;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
 }
 
 .line {
-  position: absolute;
-  top: 3rem;
-  bottom: 3rem;
-  left: 50%;
-  width: 2px;
-  transform: translateX(-50%);
-  background: linear-gradient(to bottom, transparent, var(--accent) 8%, var(--accent) 92%, transparent);
-  box-shadow: 0 0 0 1px rgba(124, 140, 248, 0.12), 0 0 18px rgba(124, 140, 248, 0.18);
+	position: absolute;
+	top: 3rem;
+	bottom: 3rem;
+	left: 50%;
+	width: 2px;
+	transform: translateX(-50%);
+	background: linear-gradient(
+		to bottom,
+		transparent,
+		var(--accent) 8%,
+		var(--accent) 92%,
+		transparent
+	);
+	box-shadow:
+		0 0 0 1px rgba(124, 140, 248, 0.12),
+		0 0 18px rgba(124, 140, 248, 0.18);
 }
 
 .nowDot {
-  position: sticky;
-  top: 1rem;
-  left: 50%;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin: 0 auto 1.25rem;
-  transform: translateX(-50%);
+	position: sticky;
+	top: 1rem;
+	left: 50%;
+	z-index: 2;
+	display: grid;
+	place-items: center;
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0 auto 1.25rem;
+	transform: translateX(-50%);
 }
 
 .nowPulse,
 .nowCore {
-  position: absolute;
-  border-radius: 999px;
+	position: absolute;
+	border-radius: 999px;
 }
 
 .nowPulse {
-  width: 100%;
-  height: 100%;
-  background: rgba(124, 140, 248, 0.15);
-  animation: pulse 2.4s ease-in-out infinite;
+	width: 100%;
+	height: 100%;
+	background: rgba(124, 140, 248, 0.15);
+	animation: pulse 2.4s ease-in-out infinite;
 }
 
 .nowCore {
-  width: 0.56rem;
-  height: 0.56rem;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(124, 140, 248, 0.14);
+	width: 0.56rem;
+	height: 0.56rem;
+	background: var(--accent);
+	box-shadow: 0 0 0 4px rgba(124, 140, 248, 0.14);
 }
 
 .item {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 2.25rem minmax(0, 1fr);
-  align-items: start;
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 2.25rem minmax(0, 1fr);
+	align-items: start;
 }
 
 .left .contentWrap {
-  grid-column: 1;
-  justify-self: end;
+	grid-column: 1;
+	justify-self: end;
 }
 
 .right .contentWrap {
-  grid-column: 3;
-  justify-self: start;
+	grid-column: 3;
+	justify-self: start;
 }
 
 .minorItem {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 2.25rem minmax(0, 1fr);
-  align-items: center;
-  min-height: 2.4rem;
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 2.25rem minmax(0, 1fr);
+	align-items: center;
+	min-height: 2.4rem;
 }
 
 .minorNode {
-  position: relative;
-  grid-column: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.4rem;
+	position: relative;
+	grid-column: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.4rem;
 }
 
 .markerWrap {
-  grid-column: 2;
-  position: relative;
-  display: grid;
-  justify-items: center;
-  padding-top: 1.05rem;
+	grid-column: 2;
+	position: relative;
+	display: grid;
+	justify-items: center;
+	padding-top: 1.05rem;
 }
 
 .majorMarkerWrap {
-  height: 100%;
+	height: 100%;
 }
 
 .marker {
-  position: relative;
-  display: block;
-  z-index: 1;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
+	position: relative;
+	display: block;
+	z-index: 1;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
 }
 
 .majorMarker {
-  width: 0.9rem;
-  height: 0.9rem;
-  border-radius: 999px;
-  background: var(--accent);
-  box-shadow: 0 0 0 5px rgba(124, 140, 248, 0.13);
+	width: 0.9rem;
+	height: 0.9rem;
+	border-radius: 999px;
+	background: var(--accent);
+	box-shadow: 0 0 0 5px rgba(124, 140, 248, 0.13);
 }
 
 .minorMarker {
-  width: 0.62rem;
-  height: 0.62rem;
-  border-radius: 999px;
-  background: var(--text-secondary);
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
+	width: 0.62rem;
+	height: 0.62rem;
+	border-radius: 999px;
+	background: var(--text-secondary);
+	box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
 }
 
 .markerActive {
-  outline: 2px solid rgba(124, 140, 248, 0.18);
-  outline-offset: 4px;
+	outline: 2px solid rgba(124, 140, 248, 0.18);
+	outline-offset: 4px;
 }
 
 .connector {
-  position: absolute;
-  top: 1.2rem;
-  bottom: -1.2rem;
-  width: 1px;
-  background: linear-gradient(to bottom, rgba(124, 140, 248, 0.65), rgba(124, 140, 248, 0.08));
+	position: absolute;
+	top: 1.2rem;
+	bottom: -1.2rem;
+	width: 1px;
+	background: linear-gradient(
+		to bottom,
+		rgba(124, 140, 248, 0.65),
+		rgba(124, 140, 248, 0.08)
+	);
 }
 
 .contentWrap {
-  min-width: 0;
-  width: min(100%, 29rem);
+	min-width: 0;
+	width: min(100%, 29rem);
 }
 
 .majorContentWrap {
-  padding-top: 0.4rem;
+	padding-top: 0.4rem;
 }
 
 .minorContentWrap {
-  width: min(100%, 22rem);
+	width: min(100%, 22rem);
 }
 
 .card {
-  position: relative;
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(21, 21, 19, 0.96), rgba(18, 18, 23, 0.94));
-  padding: 1.05rem 1.1rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+	position: relative;
+	border: 1px solid var(--border-subtle);
+	border-radius: 12px;
+	background: linear-gradient(
+		180deg,
+		rgba(21, 21, 19, 0.96),
+		rgba(18, 18, 23, 0.94)
+	);
+	padding: 1.05rem 1.1rem;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
 }
 
 .card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.03), transparent 35%);
-  pointer-events: none;
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	background: linear-gradient(
+		120deg,
+		rgba(255, 255, 255, 0.03),
+		transparent 35%
+	);
+	pointer-events: none;
 }
 
 .majorCard {
-  min-height: 9rem;
+	min-height: 9rem;
 }
 
 .minorCard {
-  padding: 0.9rem 0.95rem;
+	padding: 0.9rem 0.95rem;
 }
 
 .minorPopover {
-  position: absolute;
-  left: calc(100% + 1rem);
-  top: 50%;
-  z-index: 1;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  width: min(20rem, calc(50vw - 3rem));
-  padding: 0.9rem 1rem;
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  background: rgba(21, 21, 19, 0.96);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
-  opacity: 0;
-  transform: translateY(-50%) translateX(-8px);
-  pointer-events: none;
-  transition: opacity 0.22s ease, transform 0.22s ease;
+	position: absolute;
+	left: calc(100% + 1rem);
+	top: 50%;
+	z-index: 1;
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+	width: min(20rem, calc(50vw - 3rem));
+	padding: 0.9rem 1rem;
+	border: 1px solid var(--border-subtle);
+	border-radius: 12px;
+	background: rgba(21, 21, 19, 0.96);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+	opacity: 0;
+	transform: translateY(-50%) translateX(-8px);
+	pointer-events: none;
+	transition:
+		opacity 0.22s ease,
+		transform 0.22s ease;
 }
 
 .minorPopover::before {
-  content: "";
-  position: absolute;
-  left: -0.45rem;
-  top: 50%;
-  width: 0.7rem;
-  height: 1px;
-  background: var(--border-default);
+	content: "";
+	position: absolute;
+	left: -0.45rem;
+	top: 50%;
+	width: 0.7rem;
+	height: 1px;
+	background: var(--border-default);
 }
 
 .minorItem:hover .minorPopover,
@@ -225,221 +250,223 @@
 .minorNode:hover .minorPopover,
 .minorNode:focus-within .minorPopover,
 .popoverOpen {
-  opacity: 1;
-  transform: translateY(-50%) translateX(0);
-  pointer-events: auto;
+	opacity: 1;
+	transform: translateY(-50%) translateX(0);
+	pointer-events: auto;
 }
 
 .minorPopoverBody {
-  min-width: 0;
+	min-width: 0;
 }
 
 .minorPopoverTop {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-bottom: 0.4rem;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.75rem;
+	margin-bottom: 0.4rem;
 }
 
 .minorTitle {
-  font-size: 0.96rem;
-  line-height: 1.25;
+	font-size: 0.96rem;
+	line-height: 1.25;
 }
 
 .minorDescription {
-  color: var(--text-secondary);
-  line-height: 1.55;
-  font-size: 0.84rem;
+	color: var(--text-secondary);
+	line-height: 1.55;
+	font-size: 0.84rem;
 }
 
 .cardTop {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
-  align-items: center;
-  margin-bottom: 0.85rem;
+	display: flex;
+	justify-content: space-between;
+	gap: 0.75rem;
+	align-items: center;
+	margin-bottom: 0.85rem;
 }
 
 .badge {
-  display: inline-flex;
-  align-items: center;
-  border-radius: 999px;
-  padding: 0.35rem 0.7rem;
-  font-size: 0.78rem;
-  line-height: 1;
-  border: 1px solid transparent;
-  white-space: nowrap;
+	display: inline-flex;
+	align-items: center;
+	border-radius: 999px;
+	padding: 0.35rem 0.7rem;
+	font-size: 0.78rem;
+	line-height: 1;
+	border: 1px solid transparent;
+	white-space: nowrap;
 }
 
 .education {
-  background: #2a3a5c;
-  color: #d7e0ff;
+	background: #2a3a5c;
+	color: #d7e0ff;
 }
 
 .project {
-  background: #2a4a3a;
-  color: #dff0e8;
+	background: #2a4a3a;
+	color: #dff0e8;
 }
 
 .work {
-  background: #4a3a2a;
-  color: #f1e1d4;
+	background: #4a3a2a;
+	color: #f1e1d4;
 }
 
 .learning {
-  background: #3a2a4a;
-  color: #eadcf5;
+	background: #3a2a4a;
+	color: #eadcf5;
 }
 
 .achievement {
-  background: #4a4a2a;
-  color: #f0efcf;
+	background: #4a4a2a;
+	color: #f0efcf;
 }
 
 .date {
-  color: var(--text-muted);
-  font-size: 0.8125rem;
-  font-family: var(--font-mono);
-  white-space: nowrap;
+	color: var(--text-muted);
+	font-size: 0.8125rem;
+	font-family: var(--font-mono);
+	white-space: nowrap;
 }
 
 .title {
-  font-size: 1.15rem;
-  line-height: 1.25;
-  margin-bottom: 0.5rem;
+	font-size: 1.15rem;
+	line-height: 1.25;
+	margin-bottom: 0.5rem;
 }
 
 .description {
-  color: var(--text-secondary);
-  line-height: 1.65;
-  font-size: 0.96rem;
+	color: var(--text-secondary);
+	line-height: 1.65;
+	font-size: 0.96rem;
 }
 
 .popover {
-  display: grid;
-  gap: 0.35rem;
-  margin-top: 0.9rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  font-size: 0.86rem;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.28s ease, opacity 0.28s ease;
+	display: grid;
+	gap: 0.35rem;
+	margin-top: 0.9rem;
+	padding-top: 0.9rem;
+	border-top: 1px solid var(--border-subtle);
+	color: var(--text-secondary);
+	font-size: 0.86rem;
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition:
+		max-height 0.28s ease,
+		opacity 0.28s ease;
 }
 
 .popoverOpen {
-  max-height: 4rem;
-  opacity: 1;
+	max-height: 4rem;
+	opacity: 1;
 }
 
 .popoverLabel {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
+	font-size: 0.72rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--text-muted);
 }
 
 .visuallyHidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }
 
 @keyframes pulse {
-  0%,
-  100% {
-    transform: scale(0.9);
-    opacity: 0.65;
-  }
+	0%,
+	100% {
+		transform: scale(0.9);
+		opacity: 0.65;
+	}
 
-  50% {
-    transform: scale(1.25);
-    opacity: 0.18;
-  }
+	50% {
+		transform: scale(1.25);
+		opacity: 0.18;
+	}
 }
 
 @media (max-width: 767px) {
-  .timelineShell {
-    padding-inline: 0;
-  }
+	.timelineShell {
+		padding-inline: 0;
+	}
 
-  .line {
-    left: 0.82rem;
-    transform: none;
-  }
+	.line {
+		left: 0.82rem;
+		transform: none;
+	}
 
-  .nowDot {
-    left: 0.82rem;
-    transform: none;
-    margin-left: 0;
-  }
+	.nowDot {
+		left: 0.82rem;
+		transform: none;
+		margin-left: 0;
+	}
 
-  .item,
-  .minorItem {
-    grid-template-columns: 1.25rem 1.25rem minmax(0, 1fr);
-    padding-left: 0;
-  }
+	.item,
+	.minorItem {
+		grid-template-columns: 1.25rem 1.25rem minmax(0, 1fr);
+		padding-left: 0;
+	}
 
-  .left .contentWrap,
-  .right .contentWrap,
-  .minorItem .contentWrap {
-    grid-column: 3;
-    justify-self: stretch;
-  }
+	.left .contentWrap,
+	.right .contentWrap,
+	.minorItem .contentWrap {
+		grid-column: 3;
+		justify-self: stretch;
+	}
 
-  .markerWrap {
-    grid-column: 1 / 3;
-    justify-self: start;
-    padding-top: 1rem;
-  }
+	.markerWrap {
+		grid-column: 1 / 3;
+		justify-self: start;
+		padding-top: 1rem;
+	}
 
-  .minorNode {
-    grid-column: 1 / 3;
-    justify-content: flex-start;
-    min-height: 2rem;
-  }
+	.minorNode {
+		grid-column: 1 / 3;
+		justify-content: flex-start;
+		min-height: 2rem;
+	}
 
-  .minorPopover {
-    left: 1.9rem;
-    top: calc(100% + 0.5rem);
-    width: min(23rem, calc(100vw - 2.8rem));
-    transform: translateY(0) translateX(0);
-    padding: 0.85rem 0.9rem;
-  }
+	.minorPopover {
+		left: 1.9rem;
+		top: calc(100% + 0.5rem);
+		width: min(23rem, calc(100vw - 2.8rem));
+		transform: translateY(0) translateX(0);
+		padding: 0.85rem 0.9rem;
+	}
 
-  .minorPopover::before {
-    left: 0.55rem;
-    top: -0.45rem;
-    width: 1px;
-    height: 0.7rem;
-  }
+	.minorPopover::before {
+		left: 0.55rem;
+		top: -0.45rem;
+		width: 1px;
+		height: 0.7rem;
+	}
 
-  .minorItem:hover .minorPopover,
-  .minorItem:focus-within .minorPopover,
-  .minorNode:hover .minorPopover,
-  .minorNode:focus-within .minorPopover,
-  .popoverOpen {
-    transform: translateY(0) translateX(0);
-  }
+	.minorItem:hover .minorPopover,
+	.minorItem:focus-within .minorPopover,
+	.minorNode:hover .minorPopover,
+	.minorNode:focus-within .minorPopover,
+	.popoverOpen {
+		transform: translateY(0) translateX(0);
+	}
 
-  .contentWrap {
-    width: 100%;
-  }
+	.contentWrap {
+		width: 100%;
+	}
 
-  .minorContentWrap {
-    width: 100%;
-  }
+	.minorContentWrap {
+		width: 100%;
+	}
 
-  .card {
-    padding: 1rem;
-  }
+	.card {
+		padding: 1rem;
+	}
 }

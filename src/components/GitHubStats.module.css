@@ -1,155 +1,155 @@
 .card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  padding: var(--space-md);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+	background: var(--bg-surface);
+	border: 1px solid var(--border-subtle);
+	border-radius: 12px;
+	padding: var(--space-md);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-sm);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: var(--space-sm);
 }
 
 .label {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
+	color: var(--text-secondary);
+	font-size: 0.875rem;
 }
 
 .total {
-  color: var(--text-primary);
-  font-size: 0.875rem;
-  font-weight: 600;
+	color: var(--text-primary);
+	font-size: 0.875rem;
+	font-weight: 600;
 }
 
 .metaRow {
-  display: flex;
-  gap: var(--space-md);
-  padding: var(--space-sm) 0;
-  margin-bottom: var(--space-sm);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
+	display: flex;
+	gap: var(--space-md);
+	padding: var(--space-sm) 0;
+	margin-bottom: var(--space-sm);
+	border-top: 1px solid var(--border-subtle);
+	border-bottom: 1px solid var(--border-subtle);
 }
 
 .metaItem {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .metaValue {
-  color: var(--text-primary);
-  font-size: 1.25rem;
-  font-weight: 700;
+	color: var(--text-primary);
+	font-size: 1.25rem;
+	font-weight: 700;
 }
 
 .metaLabel {
-  color: var(--text-muted);
-  font-size: 0.75rem;
+	color: var(--text-muted);
+	font-size: 0.75rem;
 }
 
 .graphWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
 }
 
 .monthRow {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 14px;
-  padding-left: 24px;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 14px;
+	padding-left: 24px;
 }
 
 .monthLabel {
-  font-size: 0.6875rem;
-  color: var(--text-muted);
-  white-space: nowrap;
+	font-size: 0.6875rem;
+	color: var(--text-muted);
+	white-space: nowrap;
 }
 
 .gridRow {
-  display: flex;
-  gap: 6px;
+	display: flex;
+	gap: 6px;
 }
 
 .weekdayColumn {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  flex-shrink: 0;
-  width: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	flex-shrink: 0;
+	width: 20px;
 }
 
 .weekdayLabel {
-  height: 11px;
-  font-size: 0.625rem;
-  color: var(--text-muted);
-  line-height: 11px;
+	height: 11px;
+	font-size: 0.625rem;
+	color: var(--text-muted);
+	line-height: 11px;
 }
 
 .grid {
-  display: flex;
-  gap: 3px;
+	display: flex;
+	gap: 3px;
 }
 
 .week {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
 }
 
 .cell {
-  width: 11px;
-  height: 11px;
-  border-radius: 2px;
+	width: 11px;
+	height: 11px;
+	border-radius: 2px;
 }
 
 .level0 {
-  background: var(--bg-base);
-  border: 1px solid var(--border-subtle);
+	background: var(--bg-base);
+	border: 1px solid var(--border-subtle);
 }
 
 .level1 {
-  background: #0e4429;
+	background: #0e4429;
 }
 
 .level2 {
-  background: #006d32;
+	background: #006d32;
 }
 
 .level3 {
-  background: #26a641;
+	background: #26a641;
 }
 
 .level4 {
-  background: #39d353;
+	background: #39d353;
 }
 
 .viewLink {
-  color: var(--accent);
-  font-size: 0.875rem;
-  margin-top: auto;
-  padding-top: var(--space-sm);
-  align-self: flex-start;
+	color: var(--accent);
+	font-size: 0.875rem;
+	margin-top: auto;
+	padding-top: var(--space-sm);
+	align-self: flex-start;
 }
 
 .fallback {
-  color: var(--text-secondary);
-  font-size: 0.9375rem;
-  text-align: center;
-  margin-bottom: var(--space-xs);
+	color: var(--text-secondary);
+	font-size: 0.9375rem;
+	text-align: center;
+	margin-bottom: var(--space-xs);
 }
 
 .fallbackLink {
-  display: block;
-  text-align: center;
-  color: var(--accent);
-  font-size: 0.875rem;
+	display: block;
+	text-align: center;
+	color: var(--accent);
+	font-size: 0.875rem;
 }
 
 .fallbackLink:hover {
-  color: var(--accent-hover);
+	color: var(--accent-hover);
 }

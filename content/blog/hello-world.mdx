@@ -6,14 +6,16 @@ summary: "Why I rebuilt my portfolio as a living knowledge base instead of a sta
 coverImage: "/images/blog/blog-1.png"
 ---
 
-The Pragmatic Programmer introduces the idea of maintaining a *knowledge portfolio*—treating your skills the same way you would treat financial investments. You don't become a better developer by learning one thing once. You improve by making small, consistent investments over time.
+The Pragmatic Programmer introduces the idea of maintaining a _knowledge portfolio_—treating your skills the same way you would treat financial investments. You don't become a better developer by learning one thing once. You improve by making small, consistent investments over time.
 
 When I first read that concept, it sounded obvious. Everyone says "keep learning." But the book takes it one step further: learning shouldn't be random. It should be deliberate, documented, and continuously growing.
 
 This portfolio is my attempt to make that idea tangible.
 
 Instead of being a static website that I update once every semester, it's a place where projects evolve, blog posts accumulate, and my understanding becomes visible over time.
-___
+
+---
+
 ## Why not just a resume?
 
 A resume is designed to summarize.
@@ -33,9 +35,10 @@ A knowledge portfolio can show:
 
 Those tell a much richer story than a single bullet point ever could.
 
-Over time I realized recruiters, engineers, and even my future self benefit far more from seeing *how* I think than simply seeing a list of technologies.
+Over time I realized recruiters, engineers, and even my future self benefit far more from seeing _how_ I think than simply seeing a list of technologies.
 
 ---
+
 ## Learning compounds
 
 Programming has an interesting property.
@@ -146,13 +149,11 @@ For TypeScript:
 
 ```ts
 type Project = {
-  title: string;
-  featured: boolean;
+	title: string;
+	featured: boolean;
 };
 
-const featuredProjects = projects.filter(
-  (project) => project.featured
-);
+const featuredProjects = projects.filter((project) => project.featured);
 
 console.log(featuredProjects);
 ```

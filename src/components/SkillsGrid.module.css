@@ -1,165 +1,173 @@
 .filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: var(--space-sm);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: var(--space-sm);
 }
 
 .filterBtn {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
+	background: var(--bg-surface);
+	border: 1px solid var(--border-subtle);
+	color: var(--text-secondary);
+	padding: 0.5rem 1rem;
+	border-radius: 999px;
+	font-size: 0.875rem;
+	cursor: pointer;
+	transition:
+		border-color 0.2s ease,
+		color 0.2s ease;
 }
 
 .filterBtn:hover {
-  color: var(--text-primary);
-  border-color: var(--border-default);
+	color: var(--text-primary);
+	border-color: var(--border-default);
 }
 
 .filterBtnActive {
-  background: var(--accent);
-  color: var(--bg-base);
-  border-color: var(--accent);
+	background: var(--accent);
+	color: var(--bg-base);
+	border-color: var(--accent);
 }
 
 .filterBtnActive:hover {
-  color: var(--bg-base);
+	color: var(--bg-base);
 }
 
 .dropdownWrapper {
-  position: relative;
+	position: relative;
 }
 
 .dropdown {
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  left: 0;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  border-radius: 12px;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  min-width: 160px;
-  z-index: 10;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+	position: absolute;
+	top: calc(100% + 0.5rem);
+	left: 0;
+	background: var(--bg-surface);
+	border: 1px solid var(--border-default);
+	border-radius: 12px;
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	min-width: 160px;
+	z-index: 10;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .dropdownItem {
-  background: none;
-  border: none;
-  text-align: left;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+	background: none;
+	border: none;
+	text-align: left;
+	padding: 0.5rem 0.75rem;
+	border-radius: 8px;
+	color: var(--text-secondary);
+	font-size: 0.875rem;
+	cursor: pointer;
+	transition:
+		background 0.2s ease,
+		color 0.2s ease;
 }
 
 .dropdownItem:hover {
-  background: var(--bg-surface-hover);
-  color: var(--text-primary);
+	background: var(--bg-surface-hover);
+	color: var(--text-primary);
 }
 
 .dropdownItemActive {
-  color: var(--accent);
-  font-weight: 600;
+	color: var(--accent);
+	font-weight: 600;
 }
 
 .legend {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--text-muted);
-  font-size: 0.8125rem;
-  margin-bottom: var(--space-md);
-  flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: var(--text-muted);
+	font-size: 0.8125rem;
+	margin-bottom: var(--space-md);
+	flex-wrap: wrap;
 }
 
 .legendSwatch {
-  width: 14px;
-  height: 14px;
-  border-radius: 6px;
-  display: inline-block;
-  margin-left: 0.5rem;
-  border-width: 2px;
-  border-style: solid;
+	width: 14px;
+	height: 14px;
+	border-radius: 6px;
+	display: inline-block;
+	margin-left: 0.5rem;
+	border-width: 2px;
+	border-style: solid;
 }
 
 .legendSwatch:first-child {
-  margin-left: 0;
+	margin-left: 0;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-  gap: var(--space-sm);
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+	gap: var(--space-sm);
 }
 
 .iconTile {
-  position: relative;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 14px;
-  background: var(--bg-surface);
-  border-width: 2px;
-  border-style: solid;
-  transition: transform 0.15s ease, background 0.2s ease;
-  cursor: default;
+	position: relative;
+	aspect-ratio: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 14px;
+	background: var(--bg-surface);
+	border-width: 2px;
+	border-style: solid;
+	transition:
+		transform 0.15s ease,
+		background 0.2s ease;
+	cursor: default;
 }
 
 .iconTile:hover {
-  transform: translateY(-3px);
-  background: var(--bg-surface-hover);
+	transform: translateY(-3px);
+	background: var(--bg-surface-hover);
 }
 
 .icon {
-  width: 32px;
-  height: 32px;
+	width: 32px;
+	height: 32px;
 }
 
 .tierComfortable {
-  border-color: var(--accent);
+	border-color: var(--accent);
 }
 
 .tierWorking {
-  border-color: var(--border-default);
+	border-color: var(--border-default);
 }
 
 .tierLearning {
-  border-color: var(--border-subtle);
-  border-style: dashed;
-  opacity: 0.75;
+	border-color: var(--border-subtle);
+	border-style: dashed;
+	opacity: 0.75;
 }
 
 .tooltip {
-  position: absolute;
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%) translateY(4px);
-  background: var(--bg-base);
-  border: 1px solid var(--border-default);
-  color: var(--text-primary);
-  font-size: 0.75rem;
-  white-space: nowrap;
-  padding: 0.375rem 0.625rem;
-  border-radius: 6px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-  z-index: 20;
+	position: absolute;
+	bottom: calc(100% + 8px);
+	left: 50%;
+	transform: translateX(-50%) translateY(4px);
+	background: var(--bg-base);
+	border: 1px solid var(--border-default);
+	color: var(--text-primary);
+	font-size: 0.75rem;
+	white-space: nowrap;
+	padding: 0.375rem 0.625rem;
+	border-radius: 6px;
+	opacity: 0;
+	pointer-events: none;
+	transition:
+		opacity 0.15s ease,
+		transform 0.15s ease;
+	z-index: 20;
 }
 
 .iconTile:hover .tooltip {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+	opacity: 1;
+	transform: translateX(-50%) translateY(0);
 }

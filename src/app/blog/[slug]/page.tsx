@@ -10,63 +10,63 @@ import TableOfContents from "@/components/TableOfContents";
 import styles from "./page.module.css";
 
 export function generateStaticParams() {
-  const dir = path.join(process.cwd(), "content", "blog");
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mdx"));
-  return files.map((file) => ({ slug: file.replace(/\.mdx$/, "") }));
+	const dir = path.join(process.cwd(), "content", "blog");
+	const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mdx"));
+	return files.map((file) => ({ slug: file.replace(/\.mdx$/, "") }));
 }
 
 export default async function BlogPostPage({
-  params,
+	params,
 }: {
-  params: Promise<{ slug: string }>;
+	params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
+	const { slug } = await params;
 
-  let content: string;
-  let frontmatter;
+	let content: string;
+	let frontmatter;
 
-  try {
-    ({ content, frontmatter } = getContentBySlug("blog", slug));
-  } catch {
-    notFound();
-  }
+	try {
+		({ content, frontmatter } = getContentBySlug("blog", slug));
+	} catch {
+		notFound();
+	}
 
-  return (
-    <div className={styles.layout}>
-      <main className={styles.main}>
-        <Link href="/blog" className={styles.back}>
-          ← Back to blog
-        </Link>
+	return (
+		<div className={styles.layout}>
+			<main className={styles.main}>
+				<Link href="/blog" className={styles.back}>
+					← Back to blog
+				</Link>
 
-        {frontmatter.coverImage && (
-          <div className={styles.heroImageWrapper}>
-            <Image
-              src={frontmatter.coverImage}
-              alt={frontmatter.title}
-              fill
-              sizes="720px"
-              className={styles.heroImage}
-              priority
-            />
-          </div>
-        )}
+				{frontmatter.coverImage && (
+					<div className={styles.heroImageWrapper}>
+						<Image
+							src={frontmatter.coverImage}
+							alt={frontmatter.title}
+							fill
+							sizes="720px"
+							className={styles.heroImage}
+							priority
+						/>
+					</div>
+				)}
 
-        <h1 className={styles.title}>{frontmatter.title}</h1>
+				<h1 className={styles.title}>{frontmatter.title}</h1>
 
-        <div className={styles.meta}>
-          <span>{frontmatter.date}</span>
-          {frontmatter.tags.map((tag: string) => (
-            <span key={tag} className={styles.tag}>
-              {tag}
-            </span>
-          ))}
-        </div>
+				<div className={styles.meta}>
+					<span>{frontmatter.date}</span>
+					{frontmatter.tags.map((tag: string) => (
+						<span key={tag} className={styles.tag}>
+							{tag}
+						</span>
+					))}
+				</div>
 
-        <article className={styles.article}>
-          <MDXRemote source={content} options={mdxOptions} />
-        </article>
-      </main>
-        <TableOfContents />
-    </div>
-  );
+				<article className={styles.article}>
+					<MDXRemote source={content} options={mdxOptions} />
+				</article>
+			</main>
+			<TableOfContents />
+		</div>
+	);
 }

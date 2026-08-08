@@ -1,139 +1,145 @@
 .filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: var(--space-md);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: var(--space-md);
 }
 
 .filterBtn {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
+	background: var(--bg-surface);
+	border: 1px solid var(--border-subtle);
+	color: var(--text-secondary);
+	padding: 0.5rem 1rem;
+	border-radius: 999px;
+	font-size: 0.875rem;
+	cursor: pointer;
+	transition:
+		border-color 0.2s ease,
+		color 0.2s ease;
 }
 
 .filterBtn:hover {
-  color: var(--text-primary);
-  border-color: var(--border-default);
+	color: var(--text-primary);
+	border-color: var(--border-default);
 }
 
 .filterBtnActive {
-  background: var(--accent);
-  color: var(--bg-base);
-  border-color: var(--accent);
+	background: var(--accent);
+	color: var(--bg-base);
+	border-color: var(--accent);
 }
 
 .filterBtnActive:hover {
-  color: var(--bg-base);
+	color: var(--bg-base);
 }
 
 .empty {
-  color: var(--text-muted);
+	color: var(--text-muted);
 }
 
 .list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-sm);
 }
 
 .card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  padding: var(--space-md);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-  transition: border-color 0.2s ease, background 0.2s ease;
+	background: var(--bg-surface);
+	border: 1px solid var(--border-subtle);
+	border-radius: 12px;
+	padding: var(--space-md);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+	transition:
+		border-color 0.2s ease,
+		background 0.2s ease;
 }
 
 .card:hover {
-  border-color: var(--border-default);
-  background: var(--bg-surface-hover);
+	border-color: var(--border-default);
+	background: var(--bg-surface-hover);
 }
 
 .cardHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-sm);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-sm);
 }
 
 .cardTitle {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--text-primary);
+	font-size: 1.125rem;
+	font-weight: 600;
+	color: var(--text-primary);
 }
 
 .date {
-  color: var(--text-muted);
-  font-size: 0.8125rem;
-  white-space: nowrap;
+	color: var(--text-muted);
+	font-size: 0.8125rem;
+	white-space: nowrap;
 }
 
 .summary {
-  color: var(--text-secondary);
-  font-size: 0.9375rem;
+	color: var(--text-secondary);
+	font-size: 0.9375rem;
 }
 
 .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.375rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.375rem;
 }
 
 .tag {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  background: var(--bg-base);
-  border: 1px solid var(--border-subtle);
-  padding: 0.125rem 0.5rem;
-  border-radius: 6px;
+	font-size: 0.75rem;
+	color: var(--text-muted);
+	background: var(--bg-base);
+	border: 1px solid var(--border-subtle);
+	padding: 0.125rem 0.5rem;
+	border-radius: 6px;
 }
 
 .dropdownWrapper {
-  position: relative;
+	position: relative;
 }
 
 .dropdown {
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  left: 0;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  border-radius: 12px;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  min-width: 160px;
-  z-index: 10;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+	position: absolute;
+	top: calc(100% + 0.5rem);
+	left: 0;
+	background: var(--bg-surface);
+	border: 1px solid var(--border-default);
+	border-radius: 12px;
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	min-width: 160px;
+	z-index: 10;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .dropdownItem {
-  background: none;
-  border: none;
-  text-align: left;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+	background: none;
+	border: none;
+	text-align: left;
+	padding: 0.5rem 0.75rem;
+	border-radius: 8px;
+	color: var(--text-secondary);
+	font-size: 0.875rem;
+	cursor: pointer;
+	transition:
+		background 0.2s ease,
+		color 0.2s ease;
 }
 
 .dropdownItem:hover {
-  background: var(--bg-surface-hover);
-  color: var(--text-primary);
+	background: var(--bg-surface-hover);
+	color: var(--text-primary);
 }
 
 .dropdownItemActive {
-  color: var(--accent);
-  font-weight: 600;
+	color: var(--accent);
+	font-weight: 600;
 }
